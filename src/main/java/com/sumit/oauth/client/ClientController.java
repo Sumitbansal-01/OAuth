@@ -51,10 +51,8 @@ public class ClientController {
 	
 	@PostMapping("/clients")
 	public ResponseEntity<MappingJacksonValue> createClient(@RequestBody Client client){
-		System.out.println("xyz "+client);
 		client.setApiKey(passwordEncoder.encode(client.getApiKey()));
 		repo.save(client);
-		System.out.println(client);
 		return ResponseEntity.created(null).body(getFilter(client));
 	}
 }
