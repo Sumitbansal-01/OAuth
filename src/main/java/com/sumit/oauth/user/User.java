@@ -1,15 +1,14 @@
 package com.sumit.oauth.user;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-//@JsonIgnoreProperties("password")
+@JsonFilter("userFilter")
 @Entity(name = "user_details")
-public class User {
+public class User implements UserFilterInterface{
 	
 	@Id
 	@GeneratedValue
