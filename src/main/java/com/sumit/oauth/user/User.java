@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 
 @JsonFilter("userFilter")
 @Entity(name = "user_details")
-public class User implements UserFilterInterface{
+public class User{
 	
 	@Id
 	@GeneratedValue

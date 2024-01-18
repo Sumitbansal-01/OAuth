@@ -12,21 +12,23 @@ public class Client {
 
 	@Id
 	@GeneratedValue
-	long id;
+	String id;
 	String email;
 	String apiKey;
 	String name;
 	String phoneNumber;
+	long requestLeft;
+	String httpsuri;
 	
 	public Client() {
 		super();
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -62,11 +64,28 @@ public class Client {
 		this.phoneNumber = phoneNumber;
 	}
 
+	public long getRequestLeft() {
+		return requestLeft;
+	}
+
+	public void setRequestLeft(long requestLeft) {
+		this.requestLeft = requestLeft;
+	}
+
+	public String getHttpsuri() {
+		return httpsuri;
+	}
+
+	public void setHttpsuri(String httpsuri) {
+		this.httpsuri = httpsuri;
+	}
+
 	@Override
 	public String toString() {
 		return "Client [id=" + id + ", email=" + email + ", apiKey=" + apiKey + ", name=" + name + ", phoneNumber="
-				+ phoneNumber + "]";
+				+ phoneNumber + ", requestLeft=" + requestLeft + ", httpsuri=" + httpsuri + "]";
 	}
+
 	
 	
 }
